@@ -50,6 +50,18 @@
       }
     }
 
+    @keyframes spinAndTilt {
+      0% {
+        transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+      }
+      50% {
+        transform: perspective(500px) rotateY(10deg) rotateX(5deg);
+      }
+      100% {
+        transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+      }
+    }
+
     .spacing {
       --nav-main-spacing: -3rem;
       --main-faq-spacing: 3rem;
@@ -59,6 +71,12 @@
     .main-content {
       margin-top: var(--nav-main-spacing);
       animation: fadeIn 1s ease-out;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80vh;
+      gap: 2rem;
     }
 
     .faq-section {
@@ -130,6 +148,26 @@
     .faq-button .emoji.open {
       transform: rotate(180deg);
     }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      transition: transform 0.5s ease;
+      transform-style: preserve-3d;
+      perspective: 500px;
+    }
+
+    .image-container img:hover {
+      animation: spinAndTilt 2s ease-in-out forwards;
+    }
   </style>
 </head>
 
@@ -138,13 +176,12 @@
     <nav class="flex justify-between items-center py-4">
       <div class="text-2xl font-bold bg-gradient-to-r from-purple-700 to-purple-900 text-transparent bg-clip-text">Nebula</div>
       <div class="space-x-4 text-lg">
-        <a href="https://discord.gg/z4DazfFyX9" class="hover:text-gray-400"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/DevilishRar/Novas/tree/main" class="hover:text-gray-400" onclick="redirectToGitHub()"><i class="fab fa-github"></i></a>
+        <a href="https://discord.gg/ZyTq6WCz" class="hover:text-gray-400"><i class="fab fa-discord"></i></a>
       </div>
     </nav>
 
-    <div class="main-content flex flex-col lg:flex-row items-center py-16 min-h-screen justify-center">
-      <div class="text-center lg:text-left lg:w-1/2">
+    <div class="main-content">
+      <div class="text-content w-full lg:w-1/2">
         <h1 class="text-4xl font-bold mb-4 text-purple-700">Nebula for <span class="text-purple-900">Roblox</span></h1>
         <h2 class="text-3xl mb-4">Bypass with <span class="text-purple-900">power</span>. Inject with <span class="text-purple-900">ease</span>.</h2>
         <p class="text-lg mb-6">Experience the ultimate cheating tool for Roblox. Our dedicated developers ensure constant updates and superior performance.</p>
@@ -154,8 +191,8 @@
           <button onclick="scrollToSection('features')" class="bg-gray-800 text-white py-2 px-4 rounded-full text-lg">Features</button>
         </div>
       </div>
-      <div class="mt-8 lg:mt-0 lg:w-1/2 flex justify-center">
-        <img src="https://media.discordapp.net/attachments/1265328495307788290/1265387400746766427/image.png?ex=66a1fc1a&is=66a0aa9a&hm=ef6c7778214dac998cff984f06a4696b5178eb799fbdfd8fa84058e4432e28d6&=&format=webp&quality=lossless" alt="Nebula Executor" class="rounded-lg shadow-2xl">
+      <div class="image-container">
+        <img src="https://media.discordapp.net/attachments/1266881998383874068/1269767123396333610/Screenshot_20240805_002106.jpg?ex=66b14249&is=66aff0c9&hm=22ec4ea43940116f71b58ac32482b954c49db51659877d798f9ad474d9c6400f&=&format=webp&width=805&height=480" alt="Nebula Executor" class="rounded-lg shadow-2xl">
       </div>
     </div>
 
